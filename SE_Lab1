@@ -2,10 +2,10 @@
 /**************************************************************************************************/
 /* Copyright (C) JG14225101, SSE@USTC, 2014-2015                                                  */
 /*                                                                                                */
-/*  FILE NAME             :  SE_Lab1.c                                                               */
+/*  FILE NAME             :  SE_Lab1.c                                                            */
 /*  PRINCIPAL AUTHOR      :  Baodi                                                                */
-/*  SUBSYSTEM NAME        :  SE_Lab1                                                                 */
-/*  MODULE NAME           :  SE_Lab1                                                                 */
+/*  SUBSYSTEM NAME        :  SE_Lab1                                                              */
+/*  MODULE NAME           :  SE_Lab1                                                              */
 /*  LANGUAGE              :  C                                                                    */
 /*  TARGET ENVIRONMENT    :  ANY                                                                  */
 /*  DATE OF FIRST RELEASE :  2014/09/11                                                           */
