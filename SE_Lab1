@@ -88,4 +88,5 @@ return 0;
 int Writer()
 {
 	printf("This code is written by Baodi(JG14225101)\n");
+	return 0;
 }
