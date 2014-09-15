@@ -26,16 +26,16 @@
 int Help();
 int Writer();
 
-#define DESC_LEN		1024
-#define CMD_NUM			10
+#define DESC_LEN	1024
+#define CMD_NUM		10
 #define CMD_MAX_LEN     128			
 
 typedef struct DataNode
 {
-	char*	cmd;
-	char*	desc;
-	int 	(*handler)();
-	struct	DataNode *next;
+    char*    cmd;
+    char*    desc;
+    int      (*handler)();
+    struct   DataNode *next;
 }tDataNode;
 
 static tDataNode head[] =
@@ -47,46 +47,47 @@ static tDataNode head[] =
 
 main()
 {
-	/*cmd line begins*/
-	while(1)
-	{
-		char cmd[CMD_MAX_LEN];
-		printf("Input a cmd  > ");
-		gets(cmd);
-		tDataNode *p = head;
-		for(; p!=NULL; p=p->next)
-		{
-			if(!strcmp(p->cmd, cmd))
-			{
-				printf("%s - %s\n", p->cmd,p->desc);
-				if(p->handler != NULL)
-				{
-					p->handler();
-				}
-				break;
-			}		
-		}		
-		if(p == NULL)
-		{
-			printf("This is a wrong cmd !\n ");
-		}
-	}
+    /*cmd line begins*/
+    while(1)
+    {
+        char cmd[CMD_MAX_LEN];
+        printf("Input a cmd  > ");
+        gets(cmd);
+        tDataNode *p = head;
+        for(; p!=NULL; p=p->next)
+        {
+            if(!strcmp(p->cmd, cmd))
+            {
+                printf("%s - %s\n", p->cmd,p->desc);
+                if(p->handler != NULL)
+            {
+                p->handler();
+            }
+            break;
+            }		
+        }		
+        if(p == NULL)
+        {
+            printf("This is a wrong cmd !\n ");
+        }
+    }
 }
 
 int Help()
 {
-	printf("Menu List:\n");
-	tDataNode *p = head;
-	while(p != NULL)
-	{
-		printf("%s - %s\n",p->cmd, p->desc);
-		p = p->next;
-	}
+    printf("Menu List:\n");
+    tDataNode *p = head;
+    while(p != NULL)
+    {
+    printf("%s - %s\n",p->cmd, p->desc);
+    p = p->next;
+    }
 return 0;
 }
 
 int Writer()
 {
-	printf("This code is written by Baodi(JG14225101)\n");
-	return 0;
+    printf("This code is written by Baodi(JG14225101)\n");
+    return 0;
 }
+
