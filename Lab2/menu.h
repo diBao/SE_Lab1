@@ -21,6 +21,9 @@
 
 #include"linktable.h"
 
+#define ttLinkTable tLinkTable
+#define tCreateLinkTable CreateLinkTable
+
 /* data struct and its operation */
 typedef struct DataNode
 {
@@ -30,11 +33,14 @@ typedef struct DataNode
     int      (*handler)();
 }tDataNode;
 
-/*Initialize cmd*/
-tLinkTable* Initialize();
+/*interface for user*/
+int MenuBegin(ttLinkTable* head);
+
+/*Initialize menu
+tLinkTable* Initialize();*/
 
 /* show all the command */
-int ShowAllCmd();
+int ShowAllCmd(ttLinkTable* head);
 
 /*find the corresponding cmd*/
 tDataNode* FindCmd();
@@ -47,4 +53,10 @@ int Writer();
 
 /* if user input a wrong command, show this */
 int WrongCmd();
+
+/*add cmd to the menu*/
+int AddCmd(ttLinkTable* pLinkTable,char* command,char* desc,int (*handler)());
+
+/*Version cmd*/
+int Version();
 

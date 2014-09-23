@@ -9,7 +9,7 @@
 /*  LANGUAGE              :  C                                                                    */
 /*  TARGET ENVIRONMENT    :  ANY                                                                  */
 /*  DATE OF FIRST RELEASE :  2014/09/21                                                           */
-/*  DESCRIPTION           :  This is a test program                                    */
+/*  DESCRIPTION           :  This is a test program                                               */
 /**************************************************************************************************/
 
 /*
@@ -19,36 +19,23 @@
  *
  */
 
-#define CMD_MAX_LEN     128
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include "linktable.h"
 #include "menu.h"
 
 
 main()
 {
-    /*cmd line begins*/
-    while(1)
-    {
-        tLinkTable *head = Initialize();
-        char cmd[CMD_MAX_LEN];
-        printf("Input a cmd  > ");
-        gets(cmd);
-        tDataNode *p = FindCmd(head,cmd);
-        if(p == NULL)
-        {
-            WrongCmd();
-            continue;
-        }
-        printf("%s - %s\n", p->cmd,p->desc);
-        if(p->handler != NULL)
-        {
-            (p->handler)();
-        }
-    }  
+    ttLinkTable* head = NULL;
+    head = tCreateLinkTable();
+    AddCmd(head,"help","this is help cmd",Help);
+    AddCmd(head,"version","menu program v1.1",Version);
+    AddCmd(head,"writer", "Show the information of writer",Writer);
+    
+    /*User can use AddCmd to add their own command*/
+
+    MenuBegin(head);
 }
 
 
