@@ -24,10 +24,10 @@
 #include <stdlib.h>
 #include "menu.h"
 
-#define debug
+#define debug printf
 
 int results[8] = {1,1,1,1,1,1,1};
-char * info[9] =
+char * info[8] =
 {
     "test report",
     "TC1 InitCMDList",
