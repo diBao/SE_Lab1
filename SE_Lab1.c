@@ -60,10 +60,10 @@ main()
             {
                 printf("%s - %s\n", p->cmd,p->desc);
                 if(p->handler != NULL)
-            {
+                {
                 p->handler();
-            }
-            break;
+                }
+                break;
             }		
         }		
         if(p == NULL)
@@ -82,7 +82,7 @@ int Help()
         printf("%s - %s\n",p->cmd, p->desc);
         p = p->next;
     }
-return 0;
+    return 0;
 }
 
 int Writer()
